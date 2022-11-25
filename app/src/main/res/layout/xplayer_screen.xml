@@ -4,19 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".XPlayerScreen"
+    android:background="#D7CCC8">
 
     <TextView
-        android:id="@+id/txtAppTitle"
+        android:id="@+id/txtTurn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="14dp"
         android:gravity="center_horizontal"
-        android:text="Tic Tac Toe"
+        android:text="X turn"
+        android:textColor="#6A6A6A"
         android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,13 +29,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/back"
         android:orientation="vertical"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAppTitle">
+        app:layout_constraintTop_toBottomOf="@+id/txtTurn">
 
         <LinearLayout
             android:id="@+id/inLinear1"
@@ -41,7 +46,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imgBtn1"
+                android:id="@+id/imgBtn00"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -49,7 +54,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageButton
-                android:id="@+id/imgBtn2"
+                android:id="@+id/imgBtn01"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -57,7 +62,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageButton
-                android:id="@+id/imgBtn3"
+                android:id="@+id/imgBtn02"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -73,7 +78,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imgBtn4"
+                android:id="@+id/imgBtn10"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -81,7 +86,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageButton
-                android:id="@+id/imgBtn5"
+                android:id="@+id/imgBtn11"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -89,7 +94,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageButton
-                android:id="@+id/imgBtn6"
+                android:id="@+id/imgBtn12"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -105,7 +110,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imgBtn7"
+                android:id="@+id/imgBtn20"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -113,7 +118,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageButton
-                android:id="@+id/imgBtn8"
+                android:id="@+id/imgBtn21"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -121,7 +126,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageButton
-                android:id="@+id/imgBtn9"
+                android:id="@+id/imgBtn22"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -130,17 +135,53 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnStart"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/txtP1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:text="Start Game"
-        android:textSize="20sp"
+        android:layout_marginTop="12dp"
+        android:text="X player: 0"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outLinear" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTurn" />
+
+    <TextView
+        android:id="@+id/txtP2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="O player: 0"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtP1"
+        app:layout_constraintStart_toStartOf="@+id/txtP1"
+        app:layout_constraintTop_toBottomOf="@+id/txtP1" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="126dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/pink_button"
+        android:text="Reset"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="116dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="70dp"
+        android:background="@drawable/pink_button"
+        android:onClick="homeBtnOnClick"
+        android:text="Home"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnReset"
+        app:layout_constraintStart_toEndOf="@+id/btnReset"
+        app:layout_constraintTop_toTopOf="@+id/btnReset" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
