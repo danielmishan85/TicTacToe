@@ -15,7 +15,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void startPlayBtnOnClick(View view){
-        Intent intent = new Intent(this, XPlayerScreen.class);
+        Intent intent = new Intent(this, GameBoard.class);
         startActivity(intent);
     }
 }

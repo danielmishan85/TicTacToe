@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".XPlayerScreen"
+    tools:context=".GameBoard"
     android:background="#D7CCC8">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="14dp"
         android:gravity="center_horizontal"
-        android:text="X turn"
+        android:text="X turn!!!"
         android:textColor="#6A6A6A"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -45,29 +45,26 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/imgBtn00"
+            <Button
+                android:id="@+id/btn00"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:textSize="60sp" />
 
-            <ImageButton
-                android:id="@+id/imgBtn01"
+            <Button
+                android:id="@+id/btn01"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:textSize="60sp" />
 
-            <ImageButton
-                android:id="@+id/imgBtn02"
+            <Button
+                android:id="@+id/btn02"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:textSize="60sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -77,29 +74,26 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/imgBtn10"
+            <Button
+                android:id="@+id/btn10"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:textSize="60sp" />
 
-            <ImageButton
-                android:id="@+id/imgBtn11"
+            <Button
+                android:id="@+id/btn11"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:textSize="60sp" />
 
-            <ImageButton
-                android:id="@+id/imgBtn12"
+            <Button
+                android:id="@+id/btn12"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:textSize="60sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -109,29 +103,26 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/imgBtn20"
+            <Button
+                android:id="@+id/btn20"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:textSize="60sp" />
 
-            <ImageButton
-                android:id="@+id/imgBtn21"
+            <Button
+                android:id="@+id/btn21"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:textSize="60sp" />
 
-            <ImageButton
-                android:id="@+id/imgBtn22"
+            <Button
+                android:id="@+id/btn22"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                tools:ignore="SpeakableTextPresentCheck"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:textSize="60sp" />
         </LinearLayout>
     </LinearLayout>
 
