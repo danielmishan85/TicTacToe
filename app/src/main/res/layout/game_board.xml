@@ -149,6 +149,16 @@
         app:layout_constraintStart_toStartOf="@+id/txtP1"
         app:layout_constraintTop_toBottomOf="@+id/txtP1" />
 
+    <ImageView
+        android:id="@+id/winLine"
+        android:layout_width="345dp"
+        android:layout_height="361dp"
+        android:layout_marginBottom="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <Button
         android:id="@+id/btnReset"
         android:layout_width="126dp"

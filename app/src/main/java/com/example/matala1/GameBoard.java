@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class GameBoard extends AppCompatActivity implements View.OnClickListener{
@@ -18,6 +18,7 @@ public class GameBoard extends AppCompatActivity implements View.OnClickListener
     private TextView txtTurn;
     private TextView txtPX;
     private TextView txtPO;
+    private ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class GameBoard extends AppCompatActivity implements View.OnClickListener
         txtTurn = findViewById(R.id.txtTurn);
         txtPX = findViewById(R.id.txtP1);
         txtPO = findViewById(R.id.txtP2);
+        img = findViewById(R.id.winLine);
+        img.setBackgroundResource(R.drawable.empty);
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
                String buttonID = "btn" + i + j;
@@ -41,9 +44,8 @@ public class GameBoard extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View view) {
                 resetBoard();
+                img.setBackgroundResource(R.drawable.empty);
                 txtTurn.setText("X turn!!!");
-                txtPX.setText("Player X: 0");
-                txtPO.setText("Player O: 0");
             }
         });
     }
@@ -84,7 +86,6 @@ public class GameBoard extends AppCompatActivity implements View.OnClickListener
         int[][] field = new int[3][3];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                //field[i][j] = buttons[i][j].getText().toString();
                 field[i][j] = Integer.parseInt(buttons[i][j].getTag().toString());
             }
         }
@@ -92,6 +93,12 @@ public class GameBoard extends AppCompatActivity implements View.OnClickListener
             if (field[i][0] == field[i][1]
                     && field[i][0] == field[i][2]
                     && field[i][0] != 0) {
+                if (i == 0)
+                    img.setBackgroundResource(R.drawable.mark6);
+                if(i == 1)
+                    img.setBackgroundResource(R.drawable.mark7);
+                if(i == 2)
+                    img.setBackgroundResource(R.drawable.mark8);
                 return true;
             }
         }
@@ -99,17 +106,25 @@ public class GameBoard extends AppCompatActivity implements View.OnClickListener
             if (field[0][i] == field[1][i]
                     && field[0][i] == field[2][i]
                     && field[0][i] != 0) {
+                if (i == 0)
+                    img.setBackgroundResource(R.drawable.mark3);
+                if(i == 1)
+                    img.setBackgroundResource(R.drawable.mark4);
+                if(i == 2)
+                    img.setBackgroundResource(R.drawable.mark5);
                 return true;
             }
         }
         if (field[0][0] == field[1][1]
                 && field[0][0] == field[2][2]
                 && field[0][0] != 0) {
+            img.setBackgroundResource(R.drawable.mark1);
             return true;
         }
         if (field[0][2] == field[1][1]
                 && field[0][2] == field[2][0]
                 && field[0][2] != 0) {
+            img.setBackgroundResource(R.drawable.mark2);
             return true;
         }
         return false;
@@ -119,19 +134,16 @@ public class GameBoard extends AppCompatActivity implements View.OnClickListener
         playerXPoints++;
         updatePointsText();
         txtTurn.setText("Player X Wins!");
-        resetBoard();
     }
 
     private void playerOWin(){
         playerOPoints++;
         updatePointsText();
         txtTurn.setText("Player O Wins!");
-        resetBoard();
     }
 
     private void draw(){
         txtTurn.setText("Draw!");
-        resetBoard();
     }
 
     private void updatePointsText(){
